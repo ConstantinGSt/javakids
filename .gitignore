@@ -1,5 +1,10 @@
 # Compiled class file
 *.class
+/bin/
+.classpath
+.gitattributes
+.project
+.gitignore
 
 # Log file
 *.log
