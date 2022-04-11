@@ -3,6 +3,12 @@ package javakids.pet;
 public class Fish extends Pet {
 	int currentDepth = 0;
 	
+	Fish() {
+	}
+	
+	Fish(int startDepth) {
+		currentDepth = startDepth;
+	}
 	
 	public int dive(int howDeep) {
 		currentDepth = currentDepth + howDeep;
