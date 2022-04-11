@@ -5,7 +5,7 @@ public class ReportCard {
 	 * - результат теста и возвращает символ A, B ,C или D
 	 * в зависимости от аргумента
 	 */
-	public char convertGrades(int testResult) {
+	public static char convertGrades(int testResult) {
 		char grade;
 		if(testResult >= 90) {
 			grade = 'A';
@@ -20,10 +20,10 @@ public class ReportCard {
 	}
 	
 	public static void main(String[] args) {
-		ReportCard rc = new ReportCard();
-		char yourGrade = rc.convertGrades(88);
+		
+		char yourGrade = convertGrades(88);
 		System.out.println("Первый тест вы сдали на " + yourGrade);
-		yourGrade = rc.convertGrades(75);
+		yourGrade = convertGrades(75);
 		System.out.println("Второй тест вы сдали на " + yourGrade);
 	}
 }
