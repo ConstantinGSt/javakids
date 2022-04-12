@@ -1,21 +1,20 @@
 package javakids.mycalculator;
 
 import javax.swing.*;
-import java.awt.FlowLayout;
+import java.awt.GridLayout;
 
+public class SimpleCalcGrid {
 
-public class SimpleCalculator {
 	public static void main(String[] args) {
-		
-		//создал панель
+
+		// Panel
 		JPanel windowContent = new JPanel();
 		
-		//менеджер отображения для этой панели
-		FlowLayout fl = new FlowLayout();
-		windowContent.setLayout(fl);
-		//this.setLayoutManager(fl);
+		//position manager this panel
+		GridLayout gl = new GridLayout(4, 2);
+		windowContent.setLayout(gl);
 		
-		// компаненты в памяти
+		//content
 		JLabel label1 = new JLabel("Number 1 :");
 		JTextField field1 = new JTextField(10);
 		JLabel label2 = new JLabel("Number 2:");
@@ -24,7 +23,7 @@ public class SimpleCalculator {
 		JTextField field3 = new JTextField(10);
 		JButton go = new JButton("Add");
 		
-		//добавляем компаненты на панель
+		//content to panel
 		windowContent.add(label1);
 		windowContent.add(field1);
 		windowContent.add(label2);
@@ -33,16 +32,13 @@ public class SimpleCalculator {
 		windowContent.add(field3);
 		windowContent.add(go);
 		
-		// фрейм + сделать его видимым
-		JFrame frame = new JFrame("First Calc");
+		//frame
+		JFrame frame = new JFrame("My Calc, i use grid");
 		frame.setContentPane(windowContent);
-		
-		// задаем размер и делаем фрем видимым
-		frame.setSize(400, 100);
+
+		//size & visible
+		frame.setSize(320, 120);
 		frame.setVisible(true);
-		
-				
-		
 	}
 
 }
