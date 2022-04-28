@@ -3,33 +3,34 @@ package javakids.mycalculator;
 import javax.swing.*;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
-import java.awt.GridBagLayout;
+//import java.awt.GridBagLayout;
 
 public class Calc {
 	// обьявляю все компоненты
 	JPanel windowContent;
 	JTextField displayField;
+	JButton button0 = new JButton("0");
+	JButton button1 = new JButton("1");
+	JButton button2 = new JButton("2");
+	JButton button3 = new JButton("3");
+	JButton button4 = new JButton("4");
+	JButton button5 = new JButton("5");
+	JButton button6 = new JButton("6");
+	JButton button7 = new JButton("7");
+	JButton button8 = new JButton("8");
+	JButton button9 = new JButton("9");
+
+	JButton buttonPoint = new JButton(".");
+	JButton buttonEqual = new JButton("=");
+	JButton buttonPlus = new JButton("+");
+	JButton buttonSubtract = new JButton("-");
+	JButton buttonMultiply = new JButton("*");
+	JButton buttonDivide = new JButton("/");
+	
 	JButton[] button = new JButton[10];
-
-	JButton button0;
-	JButton button1;
-	JButton button2;
-	JButton button3;
-	JButton button4;
-	JButton button5;
-	JButton button6;
-	JButton button7;
-	JButton button8;
-	JButton button9;
-
-	JButton buttonPoint;
-	JButton buttonEqual;
-	JButton buttonPlas;
-	JButton buttonSubtract;
-	JButton buttonMultiply;
-	JButton buttonDivide;
 	JPanel p1;
 	JPanel p2;
+	
 
 	// BorderLayout & GridLayout добавляем все элементы на фрейм
 	// в конструкторе
@@ -45,18 +46,6 @@ public class Calc {
 		// схема для панели 2
 
 		// JButton - input text Button as option
-
-		button1 = new JButton("1");
-		button2 = new JButton("2");
-		button3 = new JButton("3");
-		button4 = new JButton("4");
-		button5 = new JButton("5");
-		button6 = new JButton("6");
-		button7 = new JButton("7");
-		button8 = new JButton("8");
-		button9 = new JButton("9");
-		button0 = new JButton("0");
-		
 		button[0] = button1;
 		button[1] = button2;
 		button[2] = button3;
@@ -68,44 +57,30 @@ public class Calc {
 		button[8] = button9;
 		button[9] = button0;
 
-		buttonPoint = new JButton(".");
-		buttonEqual = new JButton("=");
-		buttonPlas = new JButton("+");
-		buttonSubtract = new JButton("-");
-		buttonMultiply = new JButton("*");
-		buttonDivide = new JButton("/");
 
 		// create panel with GridLayout 12 buttons, - 10 num
 		// and "." and "="
 		p1 = new JPanel();
 		GridLayout gl = new GridLayout(4, 3);
 		p1.setLayout(gl);
-
 		// add buttons to panel
-
-		p1.add(buttonPoint);
-		p1.add(buttonEqual);
-
-		p2 = new JPanel();
-		GridLayout gl2 = new GridLayout(4, 1);
-		p2.setLayout(gl2);
-
 		int i = 0;
 		while (i < 10) {
 			p1.add(button[i]);
 			i++;
 		}
-		// add buttons to panel
 		p1.add(buttonPoint);
 		p1.add(buttonEqual);
-
-		p2.add(buttonPlas);
+		windowContent.add("Center", p1);
+		
+		p2 = new JPanel();
+		GridLayout gl2 = new GridLayout(4, 1);
+		p2.setLayout(gl2);
+		// add buttons to panel
+		p2.add(buttonPlus);
 		p2.add(buttonSubtract);
 		p2.add(buttonMultiply);
 		p2.add(buttonDivide);
-
-		// move p1 to center window
-		windowContent.add("Center", p1);
 		windowContent.add("East", p2);
 
 		// create frame and indicate basis panel
@@ -118,7 +93,7 @@ public class Calc {
 		// visible window
 		frame.setVisible(true);
 		
-		CalculatorEngine calcEngine = new CalculatorEngine();
+		CalculatorEngine calcEngine = new CalculatorEngine(this);
 		button0.addActionListener(calcEngine);
 		button1.addActionListener(calcEngine);
 		button2.addActionListener(calcEngine);
@@ -129,6 +104,12 @@ public class Calc {
 		button7.addActionListener(calcEngine);
 		button8.addActionListener(calcEngine);
 		button9.addActionListener(calcEngine);
+		buttonPoint.addActionListener(calcEngine);
+		buttonEqual.addActionListener(calcEngine);
+		buttonPlus.addActionListener(calcEngine);
+		buttonSubtract.addActionListener(calcEngine);
+		buttonMultiply.addActionListener(calcEngine);
+		buttonDivide.addActionListener(calcEngine);
 	}
 
 	public static void main(String[] args) {
