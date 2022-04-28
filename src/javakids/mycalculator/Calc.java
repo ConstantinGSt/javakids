@@ -56,6 +56,7 @@ public class Calc {
 		button8 = new JButton("8");
 		button9 = new JButton("9");
 		button0 = new JButton("0");
+		
 		button[0] = button1;
 		button[1] = button2;
 		button[2] = button3;
@@ -116,6 +117,18 @@ public class Calc {
 
 		// visible window
 		frame.setVisible(true);
+		
+		CalculatorEngine calcEngine = new CalculatorEngine();
+		button0.addActionListener(calcEngine);
+		button1.addActionListener(calcEngine);
+		button2.addActionListener(calcEngine);
+		button3.addActionListener(calcEngine);
+		button4.addActionListener(calcEngine);
+		button5.addActionListener(calcEngine);
+		button6.addActionListener(calcEngine);
+		button7.addActionListener(calcEngine);
+		button8.addActionListener(calcEngine);
+		button9.addActionListener(calcEngine);
 	}
 
 	public static void main(String[] args) {
