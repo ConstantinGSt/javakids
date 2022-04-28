@@ -42,12 +42,9 @@ public class Calc {
 		displayField = new JTextField(30);
 		windowContent.add("North", displayField);
 
-		// схема для панели 2
 		
-		// create button use construct
 		// JButton - input text Button as option
-		
-		
+				
 		button1=new JButton("1");
 		button2=new JButton("2");
 		button3=new JButton("3");
@@ -88,6 +85,7 @@ public class Calc {
 			p1.add(button[i]);
 			i++;
 		}
+		// схема для панели 2
 		
 		p2 = new JPanel();
 		GridLayout gl2 = new GridLayout(4, 1);
@@ -95,16 +93,7 @@ public class Calc {
 	
 		
 		// add buttons to panel 
-//		p1.add(button[i]);
-//		p1.add(button2);
-//		p1.add(button3);
-//		p1.add(button4);
-//		p1.add(button5);
-//		p1.add(button6);
-//		p1.add(button7);
-//		p1.add(button8);
-//		p1.add(button9);
-//		p1.add(button0);
+
 		p1.add(buttonPoint);
 		p1.add(buttonEqual);
 		
