@@ -6,7 +6,7 @@ import javax.swing.JButton;
 
 public class CalculatorEngine implements ActionListener {
 	Calc parent;
-	char selectedAction;
+	char selectedAction =' ';
 	double currentResult = 0;
 	
 	CalculatorEngine(Calc parent){
@@ -47,7 +47,7 @@ public class CalculatorEngine implements ActionListener {
 			currentResult = displayValue;
 			parent.displayField.setText("");
 		
-		} else if(src == parent.buttonEqual); {
+		} else if(src == parent.buttonEqual) {
 			
 			if(selectedAction == '+') {
 				currentResult += displayValue;
@@ -66,10 +66,10 @@ public class CalculatorEngine implements ActionListener {
 				parent.displayField.setText(""+currentResult);
 			}
 		
-		} 
+		} else {
 			String clickedButtonLabel = clickedButton.getText();
 			parent.displayField.setText(dispFieldText + clickedButtonLabel);
-			
+		}
 	
 //		String clickedButtonLabel1 = clickedButton.getText();
 //		
