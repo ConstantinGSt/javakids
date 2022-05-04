@@ -71,12 +71,6 @@ public class CalculatorEngine implements ActionListener {
 			parent.displayField.setText(dispFieldText + clickedButtonLabel);
 		}
 	
-//		String clickedButtonLabel1 = clickedButton.getText();
-//		
-//		parent.displayField.setText(displFieldText + clickedButtonLabel1);
-		
-//		JOptionPane.showConfirmDialog(null, "you pressed " + clickedButtonLabel, 
-//				"Just a test", JOptionPane.PLAIN_MESSAGE);
 	}
 
 }

@@ -3,7 +3,6 @@ package javakids.mycalculator;
 import javax.swing.*;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
-//import java.awt.GridBagLayout;
 
 public class Calc {
 	// обьявляю все компоненты
@@ -26,11 +25,10 @@ public class Calc {
 	JButton buttonSubtract = new JButton("-");
 	JButton buttonMultiply = new JButton("*");
 	JButton buttonDivide = new JButton("/");
-	
+
 	JButton[] button = new JButton[10];
 	JPanel p1;
 	JPanel p2;
-	
 
 	// BorderLayout & GridLayout добавляем все элементы на фрейм
 	// в конструкторе
@@ -43,8 +41,6 @@ public class Calc {
 		displayField = new JTextField(30);
 		windowContent.add("North", displayField);
 
-		// схема для панели 2
-
 		// JButton - input text Button as option
 		button[0] = button1;
 		button[1] = button2;
@@ -56,7 +52,6 @@ public class Calc {
 		button[7] = button8;
 		button[8] = button9;
 		button[9] = button0;
-
 
 		// create panel with GridLayout 12 buttons, - 10 num
 		// and "." and "="
@@ -72,7 +67,8 @@ public class Calc {
 		p1.add(buttonPoint);
 		p1.add(buttonEqual);
 		windowContent.add("Center", p1);
-		
+
+		// схема для панели 2
 		p2 = new JPanel();
 		GridLayout gl2 = new GridLayout(4, 1);
 		p2.setLayout(gl2);
@@ -92,7 +88,7 @@ public class Calc {
 
 		// visible window
 		frame.setVisible(true);
-		
+
 		CalculatorEngine calcEngine = new CalculatorEngine(this);
 		button0.addActionListener(calcEngine);
 		button1.addActionListener(calcEngine);
